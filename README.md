@@ -6,14 +6,21 @@ Le script intègre également un mini serveur web accessible sur le port 12345 e
 
 L'IP150 n'autorisant qu'une seule connexion, il ne sera plus possible d'accéder à l'interface web de votre alarme tant que le script sera en marche.
 
+
 > Liste des requêtes HTTP
 
 /status => Retourne un JSON informant de l'état des zones. Pour connaître le mapping des zones, appelez la page /description
+
 /description => Affiche le nom des zones correspondants aux index du JSON de /status
+
 /arm => Arme l'alarme
+
 /desarm => Désarme l'alarme
+
 /partiel => Place l'alarme en mode partiel
+
 /stop => Déconnecte le script du module IP
+
 
 > Configuration
 

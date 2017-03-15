@@ -94,7 +94,7 @@ def parse_status(js_html_list):
 
 def remove_special_chars(string):
 	characters = ("é", "è", "ë", "ê", "È", "É", "Ê", "Ë", "Â", "Á", "Ã", "Ä", "à", "â", "ã", "ï", "î", "ô", "ö", "'", "ù", "ç", "û", "ù", "’");
-	replace = 	 ("e", "e", "e", "e", "e", "e", "e", "e", "a", "a", "a", "a", "a", "a", "a", "i", "i", "o", "o", " ", "u", "c", "u", "u", " ");
+	replace = ("e", "e", "e", "e", "e", "e", "e", "e", "a", "a", "a", "a", "a", "a", "a", "i", "i", "o", "o", " ", "u", "c", "u", "u", " ");
 	for i in range(0, len(characters)):
 		string = string.replace(characters[i], replace[i])
 	return string

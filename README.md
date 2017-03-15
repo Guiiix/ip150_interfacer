@@ -38,3 +38,13 @@ Variables du script :
 - LOGIN_WAIT_TIME_START, LOGIN_WAIT_TIME_MULT : Temps d'attente entre deux tentatives de connexion
 - READY_WAIT_TIME : Temps d'attente après connexion (temps de chargement de l'alarme)
 - *_CODES : Mapping des codes
+
+> Packages requis
+- numpy
+- pyjsparser
+
+pip install numpy
+pip install pyjsparser
+
+> Lancement
+python paradox.py

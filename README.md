@@ -1,6 +1,6 @@
 # ip150_interfacer
 
-ip150-interfacer est un petit script python qui se connecte à votre module IP 150 afin de récupérer les informations en temps réel.
+ip150_interfacer est un petit script python qui se connecte à votre module IP 150 afin de récupérer les informations en temps réel.
 
 Le script intègre également un mini serveur web accessible sur le port 12345 et retournant les dernières informations récupérées.
 

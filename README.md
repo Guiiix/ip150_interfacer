@@ -45,6 +45,7 @@ Variables du script :
 - pyjsparser
 
 pip install numpy
+
 pip install pyjsparser
 
 > Lancement

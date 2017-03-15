@@ -40,6 +40,7 @@ Variables du script :
 - *_CODES : Mapping des codes
 
 > Packages requis
+
 - numpy
 - pyjsparser
 
@@ -47,4 +48,5 @@ pip install numpy
 pip install pyjsparser
 
 > Lancement
+
 python paradox.py

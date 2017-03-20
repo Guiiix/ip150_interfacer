@@ -3,6 +3,7 @@ import sys,os
 from MyHTMLParser import *
 from pyjsparser import PyJsParser
 from parser_const import *
+import globals
 
 
 def js_from_html(html):
@@ -39,8 +40,15 @@ def parse_equipment(js_html_list):
 							if element["expression"]["left"]["name"] == PARSER_AREAS_IDENTIFIER:
 								if element["expression"]["right"]["type"] == "NewExpression":
 									areas = element["expression"]["right"]["arguments"]
-	if not zones or not zones:
+	if not zones or not areas:
+		if globals.Verbose:
+			if not zones:
+				print '\033[91m' + "* <PARSER> : Unable to locate zones" + '\033[0m'
+			if not areas:
+				print'\033[91m' + "* <PARSER> : Unable to locate areas" + '\033[0m'
 		return False
+	if globals.Verbose:
+		print '\033[94m' + "* <PARSER> : Zones & areas found, parsing..." + '\033[0m'
 	parsed_zones = []
 	parsed_areas = []
 	active = False
@@ -51,6 +59,8 @@ def parse_equipment(js_html_list):
 			parsed_zones.append({"name":zones[i]["value"], "active":active, "status": 0})
 	for element in areas:
 		parsed_areas.append({"name": element["value"], "armed": False})
+	if globals.Verbose:
+		print '\033[94m' + "* <PARSER> : Zones & areas parsed" + '\033[0m'
 	return (parsed_zones, parsed_areas)
 
 def parse_ses(js_html_list):
@@ -83,13 +93,22 @@ def parse_status(js_html_list):
 								if element["expression"]["right"]["type"] == "NewExpression":
 									states_list = element["expression"]["right"]["arguments"]
 	if not status_list or not states_list:
+		if globals.Verbose:
+			if not status_list:
+				print '\033[91m' + "* <PARSER> : Unable to locate status" + '\033[0m'
+			if not states_list:
+				print '\033[91m' + "* <PARSER> : Unable to parse states" + '\033[0m'
 		return False
+	if globals.Verbose:
+		print '\033[94m' + "* <PARSER> : Status & states found, parsing..." + '\033[0m'
 	status = []
 	states = []
 	for element in status_list:
 		status.append(element["value"])
 	for element in states_list:
 		states.append(element["value"])
+	if globals.Verbose:
+		print '\033[94m' + "* <PARSER> : Status & states parsed" + '\033[0m'
 	return (status,states)
 
 def remove_special_chars(string):

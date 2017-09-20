@@ -191,10 +191,10 @@ class Interfacer:
 	### Commands methods ###
 
 	def arm(self):
-		do_request("statuslive.html?area=00&value=r")
+		self.do_request("statuslive.html?area=00&value=r")
 
 	def desarm(self):
-		do_request("statuslive.html?area=00&value=d")
+		self.do_request("statuslive.html?area=00&value=d")
 
 	def partiel(self):
-		do_request("statuslive.html?area=00&value=s")
+		self.do_request("statuslive.html?area=00&value=s")
